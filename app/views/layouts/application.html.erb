@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ventalk</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>Ventalk</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<div class="header clearfix main-nav">
+			<nav>
+				<ul class="nav nav-pills pull-right nav-ul">
+					<li role="presentation" class="active"><%= link_to "Sign in", signin_path %></li>
+					<li role="presentation"><%= link_to "Sign up", register_path %></li>
+				</ul>
+			</nav>
+			<h3 class="text-muted main-logo"><%= link_to "Ventalk", root_path %></h3>
+			<h3 class="post"><%= link_to "Post", posts_path %></h3><!--  if user is signed in send to post form if not sign up or sign in path. -->
+		</div>
+		<%= yield %>
+	  </div>
+		<footer class="footer">
+		  <div class="container">
+		  	<ul class="list-inline">
+			  	<li class="footer-logo">I am a logo</li>is a link
+					<li class="text-muted">support</li>is a link
+					<li class="text-muted">support</li>is a link
+					<li class="text-muted">support</li>is a link
+			  </ul>
+			</div>
+		</footer>
+	</body>
 </html>
