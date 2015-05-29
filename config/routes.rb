@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/signin' => 'authenticate#signin', as: :signin
+  get '/do_signin' => 'authenticate#do_signin'
+  post '/do_signin' => 'authenticate#do_signin'
   get '/register' => 'authenticate#register', as: :register
+  get '/do_register' => 'authenticate#do_register'
+  post '/do_register' => 'authenticate#do_register'
 
   get '/posts' => 'posts#index', as: :posts
 
